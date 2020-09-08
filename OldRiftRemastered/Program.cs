@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Fantome.Libraries.League.Tests
+namespace OldRiftRemastered
 {
     class Program
     {
@@ -24,7 +24,7 @@ namespace Fantome.Libraries.League.Tests
 
             //ModelsForOldRift
 
-            //Layer 1
+            //Layer 1 (Right now only "All Layers" for testing map)
             OBJFile object1 = new OBJFile(@"D:\TODO2020\LolFileDownloader\live\lol_game_client\0.0.0.200\LEVELS\Map1\Scene\NVR_OBJ_output_Wooxy\room1.obj");
             OBJFile object2 = new OBJFile(@"D:\TODO2020\LolFileDownloader\live\lol_game_client\0.0.0.200\LEVELS\Map1\Scene\NVR_OBJ_output_Wooxy\room2.obj");
             OBJFile object3 = new OBJFile(@"D:\TODO2020\LolFileDownloader\live\lol_game_client\0.0.0.200\LEVELS\Map1\Scene\NVR_OBJ_output_Wooxy\room3.obj");
@@ -201,7 +201,7 @@ namespace Fantome.Libraries.League.Tests
             AddModel85(object85, "MapGeo_Instance_84");
             AddModel86(object86, "MapGeo_Instance_85");
 
-            //Write the new Mapgeo File
+            //Write the new Mapgeo File. Current Version is 11
             mgeo.Write(@"K:\Riot Games\LeagueSkins\OldSummonersRiftRemastered2\Map11\data\maps\mapgeometry\sr\base_srx.mapgeo", 11);
 
             //Layer 1 (Base Layer)
@@ -808,7 +808,11 @@ namespace Fantome.Libraries.League.Tests
                 MapGeometryModel object3 = new MapGeometryModel(name, vertices, indices, new List<MapGeometrySubmesh>() { submesh }, MapGeometryLayer.AllLayers);
                 mgeo.AddModel(object3);
             }
-
+            
+            //Layer 2 = Fire (Infernal)
+            //Layer 3 = Earth (Mountain)
+            //Layer 4 = Water (Ocean)
+            //Layer 5 = Wind (Cloud)
 
         }
 
