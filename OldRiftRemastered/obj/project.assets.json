@@ -2,14 +2,14 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Fantome.Libraries.League/1.5.1": {
+      "Fantome.Libraries.League/1.6.3": {
         "type": "package",
         "dependencies": {
-          "FlatSharp": "2.1.0",
+          "FlatSharp": "3.3.1",
           "Magick.NET-Q16-AnyCPU": "7.21.1",
           "Newtonsoft.Json": "12.0.3",
           "SharpGLTF.Toolkit-optimized-buffers": "1.0.0",
-          "ZstdSharp": "0.4.0"
+          "ZstdSharp": "0.7.1"
         },
         "compile": {
           "lib/netstandard2.1/Fantome.Libraries.League.dll": {}
@@ -18,10 +18,10 @@
           "lib/netstandard2.1/Fantome.Libraries.League.dll": {}
         }
       },
-      "FlatSharp/2.1.0": {
+      "FlatSharp/3.3.1": {
         "type": "package",
         "dependencies": {
-          "FlatSharp.Runtime": "2.1.0",
+          "FlatSharp.Runtime": "3.3.1",
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "3.4.0",
           "System.Memory": "4.5.3"
         },
@@ -32,7 +32,7 @@
           "lib/netstandard2.0/FlatSharp.dll": {}
         }
       },
-      "FlatSharp.Runtime/2.1.0": {
+      "FlatSharp.Runtime/3.3.1": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -828,7 +828,7 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "ZstdSharp/0.4.0": {
+      "ZstdSharp/0.7.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/ZstdSharp.dll": {}
@@ -843,39 +843,39 @@
     }
   },
   "libraries": {
-    "Fantome.Libraries.League/1.5.1": {
-      "sha512": "ApOI81XuHygZ50lMtZiMJFW3fIdhuiyNNJ2FHI2h5atEr8FaVM8yf4cSZv7zV5DewpfEfqkEe0khTCFhkmM4RA==",
+    "Fantome.Libraries.League/1.6.3": {
+      "sha512": "tGRXRYTqEDGHvjh7VxVGinHxNZJ6R047toOQX0SNkdDgnG4YfvSoDJSz4Ieg2WGjmoElOXPBWTxJ0GunNFAbkA==",
       "type": "package",
-      "path": "fantome.libraries.league/1.5.1",
+      "path": "fantome.libraries.league/1.6.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fantome.libraries.league.1.5.1.nupkg.sha512",
+        "fantome.libraries.league.1.6.3.nupkg.sha512",
         "fantome.libraries.league.nuspec",
         "fantome.png",
         "lib/netstandard2.1/Fantome.Libraries.League.dll"
       ]
     },
-    "FlatSharp/2.1.0": {
-      "sha512": "E599NDj5DLz1G6pJqAEYmiw+YH3hU/Vqt3KzskldMfZcP7v4+zq0RAfP7yxFNTfzM5BCYZ7owShrtAigGj9a1A==",
+    "FlatSharp/3.3.1": {
+      "sha512": "nM90eGuLT0NMwdWiZaGp5+0vxc0Tr+2vILeQlth2+0csmUEmAgtQcr99vRstJx7NV+jbjrtd/q52P+JcUDMG4Q==",
       "type": "package",
-      "path": "flatsharp/2.1.0",
+      "path": "flatsharp/3.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "flatsharp.2.1.0.nupkg.sha512",
+        "flatsharp.3.3.1.nupkg.sha512",
         "flatsharp.nuspec",
         "lib/netstandard2.0/FlatSharp.dll"
       ]
     },
-    "FlatSharp.Runtime/2.1.0": {
-      "sha512": "bkm1aq3iqsEwBpqbBCLUImA+Zf/0PIZdgYi3zZnlG1eI3dm8D8bOErkI0DG00INH5fzua65mPVu0Wxt6vSCbAQ==",
+    "FlatSharp.Runtime/3.3.1": {
+      "sha512": "RPbS1QVrXmiu5aBrAht9NSyC8mxNh1JTxfmOU+YxRb/DPV1qzf/y3xIPuBhgpw1rWP/ajL3D7AFtvui1Mdo59A==",
       "type": "package",
-      "path": "flatsharp.runtime/2.1.0",
+      "path": "flatsharp.runtime/3.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "flatsharp.runtime.2.1.0.nupkg.sha512",
+        "flatsharp.runtime.3.3.1.nupkg.sha512",
         "flatsharp.runtime.nuspec",
         "lib/netcoreapp2.1/FlatSharp.Runtime.dll",
         "lib/netstandard2.0/FlatSharp.Runtime.dll"
@@ -2857,27 +2857,28 @@
         "version.txt"
       ]
     },
-    "ZstdSharp/0.4.0": {
-      "sha512": "3pS/tIg0wDO70ixoupJGRzcLqJmupomKtekc9x7LaLFdoHVQ0vciK6TnPweDhn3XFBkLNUaEJsTba+gEmdUD/A==",
+    "ZstdSharp/0.7.1": {
+      "sha512": "Y8+eet9Bw13VKCrXqri4VXaLE+bmyRlC+o2ET0xrVdVrxipXV/OkjdRvFdNzuxGAnwhJqA7p1keg/smyxhIX8g==",
       "type": "package",
-      "path": "zstdsharp/0.4.0",
+      "path": "zstdsharp/0.7.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/ZstdSharp.targets",
-        "build/libzstd_x64.dll",
-        "build/libzstd_x86.dll",
+        "build/libzstd.dll",
+        "build/libzstd.dylib",
+        "build/libzstd.so",
         "lib/LICENSE",
         "lib/netstandard2.1/ZstdSharp.dll",
         "zstd.png",
-        "zstdsharp.0.4.0.nupkg.sha512",
+        "zstdsharp.0.7.1.nupkg.sha512",
         "zstdsharp.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Fantome.Libraries.League >= 1.5.1"
+      "Fantome.Libraries.League >= 1.6.3"
     ]
   },
   "packageFolders": {
@@ -2925,7 +2926,7 @@
         "dependencies": {
           "Fantome.Libraries.League": {
             "target": "Package",
-            "version": "[1.5.1, )"
+            "version": "[1.6.3, )"
           }
         },
         "imports": [

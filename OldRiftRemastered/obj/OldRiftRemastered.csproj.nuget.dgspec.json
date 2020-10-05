@@ -45,7 +45,7 @@
           "dependencies": {
             "Fantome.Libraries.League": {
               "target": "Package",
-              "version": "[1.5.1, )"
+              "version": "[1.6.3, )"
             }
           },
           "imports": [
