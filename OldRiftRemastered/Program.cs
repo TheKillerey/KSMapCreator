@@ -17,7 +17,8 @@ namespace OldRiftRemastered
     {
         static void Main(string[] args)
         {
-          Sandbox();
+          
+            Sandbox();
         }
 
         static void OldRiftRemastered2()
@@ -1194,20 +1195,29 @@ namespace OldRiftRemastered
         mgeo.Models.Clear();
 
         OBJFile sandbox = new OBJFile(@"K:\Riot Games\LeagueSkins\DefaultTestMap\Models\testmap.obj");
+        OBJFile decal = new OBJFile(@"K:\Riot Games\LeagueSkins\DefaultTestMap\Models\decal.obj");
 
         AddModel(sandbox, "MapGeo_Instance_0");
+        AddModel2(decal, "MapGeo_Instance_1");
 
         //Write the new Mapgeo File. Current Version is 11
             mgeo.Write(@"K:\Riot Games\LeagueSkins\DefaultTestMap\Map11\data\maps\mapgeometry\sr\base_srx.mapgeo", 11);
 
-            //Layer 1 (Base Layer)
+            
             void AddModel(OBJFile obj, string name)
             {
                 (List<ushort> indices, List<MapGeometryVertex> vertices) = obj.GetMGEOData();
                 MapGeometrySubmesh submesh = new MapGeometrySubmesh("Maps/KitPieces/SRX/Materials/Default/Sandbox", 0, (uint)indices.Count, 0, (uint)vertices.Count);
                 MapGeometryModel sandbox = new MapGeometryModel(name, vertices, indices, new List<MapGeometrySubmesh>() { submesh }, MapGeometryLayer.AllLayers);
-                sandbox.SeparatePointLight = new Vector3(1, 1, 1);
+                sandbox.SeparatePointLight = new Vector3(1, 1, 1); //Unknown what it does.
                 mgeo.AddModel(sandbox);
+            }
+            void AddModel2(OBJFile obj, string name)
+            {
+                (List<ushort> indices, List<MapGeometryVertex> vertices) = obj.GetMGEOData();
+                MapGeometrySubmesh submesh = new MapGeometrySubmesh("Maps/KitPieces/SRX/Materials/Default/Decal", 0, (uint)indices.Count, 0, (uint)vertices.Count);
+                MapGeometryModel decal = new MapGeometryModel(name, vertices, indices, new List<MapGeometrySubmesh>() { submesh }, MapGeometryLayer.AllLayers);
+                mgeo.AddModel(decal);
             }
         }
 
