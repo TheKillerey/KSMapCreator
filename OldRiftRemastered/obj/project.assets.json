@@ -2,13 +2,13 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Fantome.Libraries.League/1.6.3": {
+      "Fantome.Libraries.League/1.6.4": {
         "type": "package",
         "dependencies": {
           "FlatSharp": "3.3.1",
           "Magick.NET-Q16-AnyCPU": "7.21.1",
           "Newtonsoft.Json": "12.0.3",
-          "SharpGLTF.Toolkit-optimized-buffers": "1.0.0",
+          "SharpGLTF.Toolkit": "1.0.0-alpha0020",
           "ZstdSharp": "0.7.1"
         },
         "compile": {
@@ -337,28 +337,25 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "SharpGLTF.Core-optimized-buffers/1.0.0": {
+      "SharpGLTF.Core/1.0.0-alpha0020": {
         "type": "package",
-        "dependencies": {
-          "System.Text.Json": "4.7.2"
-        },
         "compile": {
-          "lib/netstandard2.0/SharpGLTF.Core.dll": {}
+          "lib/netcoreapp3.1/SharpGLTF.Core.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/SharpGLTF.Core.dll": {}
+          "lib/netcoreapp3.1/SharpGLTF.Core.dll": {}
         }
       },
-      "SharpGLTF.Toolkit-optimized-buffers/1.0.0": {
+      "SharpGLTF.Toolkit/1.0.0-alpha0020": {
         "type": "package",
         "dependencies": {
-          "SharpGLTF.Core-optimized-buffers": "1.0.0"
+          "SharpGLTF.Core": "1.0.0-alpha0020"
         },
         "compile": {
-          "lib/netstandard2.0/SharpGLTF.Toolkit.dll": {}
+          "lib/netcoreapp3.1/SharpGLTF.Toolkit.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/SharpGLTF.Toolkit.dll": {}
+          "lib/netcoreapp3.1/SharpGLTF.Toolkit.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -786,15 +783,6 @@
           }
         }
       },
-      "System.Text.Json/4.7.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {}
-        }
-      },
       "System.Threading/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -843,14 +831,14 @@
     }
   },
   "libraries": {
-    "Fantome.Libraries.League/1.6.3": {
-      "sha512": "tGRXRYTqEDGHvjh7VxVGinHxNZJ6R047toOQX0SNkdDgnG4YfvSoDJSz4Ieg2WGjmoElOXPBWTxJ0GunNFAbkA==",
+    "Fantome.Libraries.League/1.6.4": {
+      "sha512": "xv/Sr5whqCyTBTB9hlnh6878RP2IX4tCL5Csr7etiM286kK/xxW32rupxf8j19sspzK5+Y4IMXOqnhYPnPY5cQ==",
       "type": "package",
-      "path": "fantome.libraries.league/1.6.3",
+      "path": "fantome.libraries.league/1.6.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fantome.libraries.league.1.6.3.nupkg.sha512",
+        "fantome.libraries.league.1.6.4.nupkg.sha512",
         "fantome.libraries.league.nuspec",
         "fantome.png",
         "lib/netstandard2.1/Fantome.Libraries.League.dll"
@@ -1197,32 +1185,36 @@
         "packageIcon.png"
       ]
     },
-    "SharpGLTF.Core-optimized-buffers/1.0.0": {
-      "sha512": "79MM3i/FzJW962CVnE+sYBR009WCPWJebyZzZNRGYqFri9FMSKm+o4L/Q9/0VTPfmz76pi8TX4csbygzlDd/KA==",
+    "SharpGLTF.Core/1.0.0-alpha0020": {
+      "sha512": "9NKvMD5lL7AVXQ+9bRKDhzmEvXTatpdrybd3F2uZVJsXR/cOkdJl+g4xBy6fjKsILTNUPWXcyquAyo/Pjs1uCw==",
       "type": "package",
-      "path": "sharpgltf.core-optimized-buffers/1.0.0",
+      "path": "sharpgltf.core/1.0.0-alpha0020",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "glTF2Sharp.png",
+        "lib/netcoreapp3.1/SharpGLTF.Core.dll",
+        "lib/netcoreapp3.1/SharpGLTF.Core.xml",
         "lib/netstandard2.0/SharpGLTF.Core.dll",
         "lib/netstandard2.0/SharpGLTF.Core.xml",
-        "sharpgltf.core-optimized-buffers.1.0.0.nupkg.sha512",
-        "sharpgltf.core-optimized-buffers.nuspec"
+        "sharpgltf.core.1.0.0-alpha0020.nupkg.sha512",
+        "sharpgltf.core.nuspec"
       ]
     },
-    "SharpGLTF.Toolkit-optimized-buffers/1.0.0": {
-      "sha512": "LL311A+UhkW7GhbBWPDLhrWG5fS4DZTidh2q9l7DRbsHhlVG5DnoBH1MRcWEP4WPEbyEXwI4UrJ4y8WkvzEllg==",
+    "SharpGLTF.Toolkit/1.0.0-alpha0020": {
+      "sha512": "1PMz5cGvUhmLqR581bjbuPZNuNAvD/+FdciPWV4H2Gl2cPDou/6xbKqYseRsebkJNYMYhLP5+LKu01SZawW/Qw==",
       "type": "package",
-      "path": "sharpgltf.toolkit-optimized-buffers/1.0.0",
+      "path": "sharpgltf.toolkit/1.0.0-alpha0020",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "glTF2Sharp.png",
+        "lib/netcoreapp3.1/SharpGLTF.Toolkit.dll",
+        "lib/netcoreapp3.1/SharpGLTF.Toolkit.xml",
         "lib/netstandard2.0/SharpGLTF.Toolkit.dll",
         "lib/netstandard2.0/SharpGLTF.Toolkit.xml",
-        "sharpgltf.toolkit-optimized-buffers.1.0.0.nupkg.sha512",
-        "sharpgltf.toolkit-optimized-buffers.nuspec"
+        "sharpgltf.toolkit.1.0.0-alpha0020.nupkg.sha512",
+        "sharpgltf.toolkit.nuspec"
       ]
     },
     "System.Collections/4.3.0": {
@@ -2663,28 +2655,6 @@
         "version.txt"
       ]
     },
-    "System.Text.Json/4.7.2": {
-      "sha512": "TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
-      "type": "package",
-      "path": "system.text.json/4.7.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Text.Json.dll",
-        "lib/net461/System.Text.Json.xml",
-        "lib/netcoreapp3.0/System.Text.Json.dll",
-        "lib/netcoreapp3.0/System.Text.Json.xml",
-        "lib/netstandard2.0/System.Text.Json.dll",
-        "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.4.7.2.nupkg.sha512",
-        "system.text.json.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "System.Threading/4.3.0": {
       "sha512": "VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
       "type": "package",
@@ -2878,7 +2848,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Fantome.Libraries.League >= 1.6.3"
+      "Fantome.Libraries.League >= 1.6.4"
     ]
   },
   "packageFolders": {
@@ -2926,7 +2896,7 @@
         "dependencies": {
           "Fantome.Libraries.League": {
             "target": "Package",
-            "version": "[1.6.3, )"
+            "version": "[1.6.4, )"
           }
         },
         "imports": [
