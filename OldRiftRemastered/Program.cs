@@ -1,9 +1,9 @@
-﻿using Fantome.Libraries.League.Helpers.Structures;
-using Fantome.Libraries.League.Helpers.Structures.BucketGrid;
-using Fantome.Libraries.League.IO.MapGeometry;
-using Fantome.Libraries.League.IO.OBJ;
-using Fantome.Libraries.League.IO.BIN;
-using Fantome.Libraries.League.IO.WorldGeometry;
+﻿using LeagueToolkit.Helpers.Structures;
+using LeagueToolkit.Helpers.Structures.BucketGrid;
+using LeagueToolkit.IO.MapGeometry;
+using LeagueToolkit.IO.OBJ;
+using LeagueToolkit.IO.PropertyBin;
+using LeagueToolkit.IO.WorldGeometry;
 using ImageMagick;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using SharpGLTF.Geometry.VertexTypes;
@@ -12,8 +12,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using SharpGLTF.Schema2;
-using Fantome.Libraries.League.IO.NVR;
-using Fantome.Libraries.League.IO.SimpleSkinFile;
+using LeagueToolkit.IO.NVR;
+using LeagueToolkit.IO.SimpleSkinFile;
+using System.Numerics;
 
 namespace OldRiftRemastered
 {
@@ -3176,6 +3177,12 @@ OBJFile model64 = new OBJFile(@"K:\Riot Games\LeagueSkins\OldRift\OldRift\Models
             OBJFile object780 = new OBJFile(@"K:\Riot Games\LeagueSkins\OldHalloweenRift\Models\room780.obj"); 
             OBJFile object781 = new OBJFile(@"K:\Riot Games\LeagueSkins\OldHalloweenRift\Models\room781.obj");
 
+            OBJFile object782 = new OBJFile(@"K:\Riot Games\LeagueSkins\OldHalloweenRift\Models\MapFix.obj");
+            OBJFile object783 = new OBJFile(@"K:\Riot Games\LeagueSkins\OldHalloweenRift\Models\easteregg1.obj");
+            OBJFile object784 = new OBJFile(@"K:\Riot Games\LeagueSkins\OldHalloweenRift\Models\easteregg2.obj");
+            OBJFile object785 = new OBJFile(@"K:\Riot Games\LeagueSkins\OldHalloweenRift\Models\easteregg3.obj");
+            OBJFile object786 = new OBJFile(@"K:\Riot Games\LeagueSkins\OldHalloweenRift\Models\easteregg3_1.obj");
+
             //NewInstancesForOldRift
             AddModel(object1, "MapGeo_Instance_0");
             AddModel2(object2, "MapGeo_Instance_1");
@@ -3963,12 +3970,53 @@ OBJFile model64 = new OBJFile(@"K:\Riot Games\LeagueSkins\OldRift\OldRift\Models
             AddModel780(object780, "MapGeo_Instance_780");
             AddModel781(object781, "MapGeo_Instance_781");
 
+            AddModel782(object782, "MapGeo_Instance_782");
+            AddModel783(object783, "MapGeo_Instance_783");
+            AddModel784(object784, "MapGeo_Instance_784");
+            AddModel785(object785, "MapGeo_Instance_785");
+            AddModel786(object786, "MapGeo_Instance_786");
+
 
             //Write the new Mapgeo File. Current Version is 11
             mgeo.Write(@"K:\Riot Games\LeagueSkins\OldHalloweenRift\HWRift\data\maps\mapgeometry\sr\base_srx.mapgeo", 11);
-            mgeo.Write(@"K:\Riot Games\LeagueSkins\OldHalloweenRift\HWRift\data\maps\mapgeometry\sr\worlds.mapgeo", 11); //Added if worlds map is enabled 
-            // In future we will compile .py files to bin so we don't need to drag and drop outside of coding
 
+            //All Layers
+
+            void AddModel782(OBJFile obj, string name)
+            {
+                (List<ushort> indices, List<MapGeometryVertex> vertices) = obj.GetMGEOData();
+                MapGeometrySubmesh submesh = new MapGeometrySubmesh("Maps/KitPieces/Summoners_Rift/Materials/room57", 0, (uint)indices.Count, 0, (uint)vertices.Count);
+                MapGeometryModel object3 = new MapGeometryModel(name, vertices, indices, new List<MapGeometrySubmesh>() { submesh }, MapGeometryLayer.AllLayers);
+                mgeo.AddModel(object3);
+            } //Fix for Top- and Botlane
+            void AddModel783(OBJFile obj, string name)
+            {
+                (List<ushort> indices, List<MapGeometryVertex> vertices) = obj.GetMGEOData();
+                MapGeometrySubmesh submesh = new MapGeometrySubmesh("Maps/KitPieces/Summoners_Rift/Materials/easteregg1", 0, (uint)indices.Count, 0, (uint)vertices.Count);
+                MapGeometryModel object3 = new MapGeometryModel(name, vertices, indices, new List<MapGeometrySubmesh>() { submesh }, MapGeometryLayer.AllLayers);
+                mgeo.AddModel(object3);
+            } //Easter Egg PSST :)
+            void AddModel784(OBJFile obj, string name)
+            {
+                (List<ushort> indices, List<MapGeometryVertex> vertices) = obj.GetMGEOData();
+                MapGeometrySubmesh submesh = new MapGeometrySubmesh("Maps/KitPieces/Summoners_Rift/Materials/easteregg2", 0, (uint)indices.Count, 0, (uint)vertices.Count);
+                MapGeometryModel object3 = new MapGeometryModel(name, vertices, indices, new List<MapGeometrySubmesh>() { submesh }, MapGeometryLayer.AllLayers);
+                mgeo.AddModel(object3);
+            } //Easter Egg PSST :)
+            void AddModel785(OBJFile obj, string name)
+            {
+                (List<ushort> indices, List<MapGeometryVertex> vertices) = obj.GetMGEOData();
+                MapGeometrySubmesh submesh = new MapGeometrySubmesh("Maps/KitPieces/Summoners_Rift/Materials/easteregg3", 0, (uint)indices.Count, 0, (uint)vertices.Count);
+                MapGeometryModel object3 = new MapGeometryModel(name, vertices, indices, new List<MapGeometrySubmesh>() { submesh }, MapGeometryLayer.AllLayers);
+                mgeo.AddModel(object3);
+            } //Easter Egg PSST :)
+            void AddModel786(OBJFile obj, string name)
+            {
+                (List<ushort> indices, List<MapGeometryVertex> vertices) = obj.GetMGEOData();
+                MapGeometrySubmesh submesh = new MapGeometrySubmesh("Maps/KitPieces/Summoners_Rift/Materials/easteregg3", 0, (uint)indices.Count, 0, (uint)vertices.Count);
+                MapGeometryModel object3 = new MapGeometryModel(name, vertices, indices, new List<MapGeometrySubmesh>() { submesh }, MapGeometryLayer.AllLayers);
+                mgeo.AddModel(object3);
+            } //Easter Egg PSST :)
 
             //Layer 1 (Base Layer)
             void AddModel(OBJFile obj, string name)
@@ -9642,8 +9690,8 @@ OBJFile model64 = new OBJFile(@"K:\Riot Games\LeagueSkins\OldRift\OldRift\Models
 
         static void BinEdit()
         {
-            BINFile test = new BINFile (@"K:\Riot Games\LeagueSkins\OldSummonersRiftRemastered2\Map11\data\maps\mapgeometry\sr\base_srx.materials.bin");
-            test.Write(@"K:\Riot Games\LeagueSkins\OldSummonersRiftRemastered2\Map11\data\maps\mapgeometry\sr\base_srx.materials_new.bin");
+            //BinTreeProperty test = new BinTreeProperty (@"K:\Riot Games\LeagueSkins\OldSummonersRiftRemastered2\Map11\data\maps\mapgeometry\sr\base_srx.materials.bin");
+           // test.Write(@"K:\Riot Games\LeagueSkins\OldSummonersRiftRemastered2\Map11\data\maps\mapgeometry\sr\base_srx.materials_new.bin");
         }
 
     }

@@ -14,11 +14,13 @@
         "outputPath": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\theki\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -43,9 +45,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Fantome.Libraries.League": {
+            "LeagueToolkit": {
               "target": "Package",
-              "version": "[1.6.4, )"
+              "version": "[2.0.1, )"
             }
           },
           "imports": [

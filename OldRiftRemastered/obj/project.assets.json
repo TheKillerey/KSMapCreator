@@ -2,22 +2,6 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Fantome.Libraries.League/1.6.4": {
-        "type": "package",
-        "dependencies": {
-          "FlatSharp": "3.3.1",
-          "Magick.NET-Q16-AnyCPU": "7.21.1",
-          "Newtonsoft.Json": "12.0.3",
-          "SharpGLTF.Toolkit": "1.0.0-alpha0020",
-          "ZstdSharp": "0.7.1"
-        },
-        "compile": {
-          "lib/netstandard2.1/Fantome.Libraries.League.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/Fantome.Libraries.League.dll": {}
-        }
-      },
       "FlatSharp/3.3.1": {
         "type": "package",
         "dependencies": {
@@ -42,6 +26,22 @@
         },
         "runtime": {
           "lib/netcoreapp2.1/FlatSharp.Runtime.dll": {}
+        }
+      },
+      "LeagueToolkit/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "FlatSharp": "3.3.1",
+          "Magick.NET-Q16-AnyCPU": "7.21.1",
+          "Newtonsoft.Json": "12.0.3",
+          "SharpGLTF.Toolkit": "1.0.0-alpha0020",
+          "ZstdSharp": "0.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/LeagueToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/LeagueToolkit.dll": {}
         }
       },
       "Magick.NET-Q16-AnyCPU/7.21.1": {
@@ -831,19 +831,6 @@
     }
   },
   "libraries": {
-    "Fantome.Libraries.League/1.6.4": {
-      "sha512": "xv/Sr5whqCyTBTB9hlnh6878RP2IX4tCL5Csr7etiM286kK/xxW32rupxf8j19sspzK5+Y4IMXOqnhYPnPY5cQ==",
-      "type": "package",
-      "path": "fantome.libraries.league/1.6.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "fantome.libraries.league.1.6.4.nupkg.sha512",
-        "fantome.libraries.league.nuspec",
-        "fantome.png",
-        "lib/netstandard2.1/Fantome.Libraries.League.dll"
-      ]
-    },
     "FlatSharp/3.3.1": {
       "sha512": "nM90eGuLT0NMwdWiZaGp5+0vxc0Tr+2vILeQlth2+0csmUEmAgtQcr99vRstJx7NV+jbjrtd/q52P+JcUDMG4Q==",
       "type": "package",
@@ -867,6 +854,19 @@
         "flatsharp.runtime.nuspec",
         "lib/netcoreapp2.1/FlatSharp.Runtime.dll",
         "lib/netstandard2.0/FlatSharp.Runtime.dll"
+      ]
+    },
+    "LeagueToolkit/2.0.1": {
+      "sha512": "Y3REMharIWzRoYe0O4Jzb/efJPAjokyuXj8JpXFdTTDLLSeM9a4qSSmzYDDxsCNjWn9LOSS+Aad//6M+gt+iKg==",
+      "type": "package",
+      "path": "leaguetoolkit/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fantome.png",
+        "leaguetoolkit.2.0.1.nupkg.sha512",
+        "leaguetoolkit.nuspec",
+        "lib/netstandard2.1/LeagueToolkit.dll"
       ]
     },
     "Magick.NET-Q16-AnyCPU/7.21.1": {
@@ -2848,11 +2848,12 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Fantome.Libraries.League >= 1.6.4"
+      "LeagueToolkit >= 2.0.1"
     ]
   },
   "packageFolders": {
     "C:\\Users\\theki\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -2865,11 +2866,13 @@
       "outputPath": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\theki\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -2894,9 +2897,9 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Fantome.Libraries.League": {
+          "LeagueToolkit": {
             "target": "Package",
-            "version": "[1.6.4, )"
+            "version": "[2.0.1, )"
           }
         },
         "imports": [
