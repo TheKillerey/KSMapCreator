@@ -28,7 +28,7 @@
           "lib/netcoreapp2.1/FlatSharp.Runtime.dll": {}
         }
       },
-      "LeagueToolkit/2.0.1": {
+      "LeagueToolkit/2.1.0": {
         "type": "package",
         "dependencies": {
           "FlatSharp": "3.3.1",
@@ -856,15 +856,15 @@
         "lib/netstandard2.0/FlatSharp.Runtime.dll"
       ]
     },
-    "LeagueToolkit/2.0.1": {
-      "sha512": "Y3REMharIWzRoYe0O4Jzb/efJPAjokyuXj8JpXFdTTDLLSeM9a4qSSmzYDDxsCNjWn9LOSS+Aad//6M+gt+iKg==",
+    "LeagueToolkit/2.1.0": {
+      "sha512": "7dAm4O82OFctue8mVU3II3SvIPjn6a1i5ON1uPvFEl05PmSV47oOLxzjh2B/HwQyPa6MgSyDO6bk8GTNI981Zg==",
       "type": "package",
-      "path": "leaguetoolkit/2.0.1",
+      "path": "leaguetoolkit/2.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "fantome.png",
-        "leaguetoolkit.2.0.1.nupkg.sha512",
+        "leaguetoolkit.2.1.0.nupkg.sha512",
         "leaguetoolkit.nuspec",
         "lib/netstandard2.1/LeagueToolkit.dll"
       ]
@@ -2848,7 +2848,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "LeagueToolkit >= 2.0.1"
+      "LeagueToolkit >= 2.1.0"
     ]
   },
   "packageFolders": {
@@ -2899,7 +2899,7 @@
         "dependencies": {
           "LeagueToolkit": {
             "target": "Package",
-            "version": "[2.0.1, )"
+            "version": "[2.1.0, )"
           }
         },
         "imports": [
