@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30428.66
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSMapCreator", "OldRiftRemastered\KSMapCreator.csproj", "{6D50EC94-68FB-4BF5-A28A-2FB688A21D2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSMapCreator", "KSMapCreator\KSMapCreator.csproj", "{6D50EC94-68FB-4BF5-A28A-2FB688A21D2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

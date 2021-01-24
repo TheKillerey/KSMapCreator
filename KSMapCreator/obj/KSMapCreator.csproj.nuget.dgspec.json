@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\OldRiftRemastered.csproj": {}
+    "K:\\VisualStudioProjects\\KSMapCreator\\KSMapCreator\\KSMapCreator.csproj": {}
   },
   "projects": {
-    "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\OldRiftRemastered.csproj": {
+    "K:\\VisualStudioProjects\\KSMapCreator\\KSMapCreator\\KSMapCreator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\OldRiftRemastered.csproj",
-        "projectName": "OldRiftRemastered",
-        "projectPath": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\OldRiftRemastered.csproj",
+        "projectUniqueName": "K:\\VisualStudioProjects\\KSMapCreator\\KSMapCreator\\KSMapCreator.csproj",
+        "projectName": "KSMapCreator",
+        "projectPath": "K:\\VisualStudioProjects\\KSMapCreator\\KSMapCreator\\KSMapCreator.csproj",
         "packagesPath": "C:\\Users\\theki\\.nuget\\packages\\",
-        "outputPath": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\obj\\",
+        "outputPath": "K:\\VisualStudioProjects\\KSMapCreator\\KSMapCreator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -48,10 +48,6 @@
             "Fantome.Libraries.League": {
               "target": "Package",
               "version": "[1.6.4, )"
-            },
-            "JeremyAnsel.Media.WavefrontObj": {
-              "target": "Package",
-              "version": "[2.0.19, )"
             }
           },
           "imports": [

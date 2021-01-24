@@ -2859,11 +2859,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\KSMapCreator.csproj",
+      "projectUniqueName": "K:\\VisualStudioProjects\\KSMapCreator\\KSMapCreator\\KSMapCreator.csproj",
       "projectName": "KSMapCreator",
-      "projectPath": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\KSMapCreator.csproj",
+      "projectPath": "K:\\VisualStudioProjects\\KSMapCreator\\KSMapCreator\\KSMapCreator.csproj",
       "packagesPath": "C:\\Users\\theki\\.nuget\\packages\\",
-      "outputPath": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\obj\\",
+      "outputPath": "K:\\VisualStudioProjects\\KSMapCreator\\KSMapCreator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
