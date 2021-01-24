@@ -45,9 +45,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "LeagueToolkit": {
+            "Fantome.Libraries.League": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[1.6.4, )"
+            },
+            "JeremyAnsel.Media.WavefrontObj": {
+              "target": "Package",
+              "version": "[2.0.19, )"
             }
           },
           "imports": [

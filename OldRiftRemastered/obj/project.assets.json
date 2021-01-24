@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Fantome.Libraries.League/1.6.4": {
+        "type": "package",
+        "dependencies": {
+          "FlatSharp": "3.3.1",
+          "Magick.NET-Q16-AnyCPU": "7.21.1",
+          "Newtonsoft.Json": "12.0.3",
+          "SharpGLTF.Toolkit": "1.0.0-alpha0020",
+          "ZstdSharp": "0.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/Fantome.Libraries.League.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Fantome.Libraries.League.dll": {}
+        }
+      },
       "FlatSharp/3.3.1": {
         "type": "package",
         "dependencies": {
@@ -28,20 +44,13 @@
           "lib/netcoreapp2.1/FlatSharp.Runtime.dll": {}
         }
       },
-      "LeagueToolkit/2.1.0": {
+      "JeremyAnsel.Media.WavefrontObj/2.0.19": {
         "type": "package",
-        "dependencies": {
-          "FlatSharp": "3.3.1",
-          "Magick.NET-Q16-AnyCPU": "7.21.1",
-          "Newtonsoft.Json": "12.0.3",
-          "SharpGLTF.Toolkit": "1.0.0-alpha0020",
-          "ZstdSharp": "0.7.1"
-        },
         "compile": {
-          "lib/netstandard2.1/LeagueToolkit.dll": {}
+          "lib/netstandard2.0/JeremyAnsel.Media.WavefrontObj.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/LeagueToolkit.dll": {}
+          "lib/netstandard2.0/JeremyAnsel.Media.WavefrontObj.dll": {}
         }
       },
       "Magick.NET-Q16-AnyCPU/7.21.1": {
@@ -831,6 +840,19 @@
     }
   },
   "libraries": {
+    "Fantome.Libraries.League/1.6.4": {
+      "sha512": "xv/Sr5whqCyTBTB9hlnh6878RP2IX4tCL5Csr7etiM286kK/xxW32rupxf8j19sspzK5+Y4IMXOqnhYPnPY5cQ==",
+      "type": "package",
+      "path": "fantome.libraries.league/1.6.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fantome.libraries.league.1.6.4.nupkg.sha512",
+        "fantome.libraries.league.nuspec",
+        "fantome.png",
+        "lib/netstandard2.1/Fantome.Libraries.League.dll"
+      ]
+    },
     "FlatSharp/3.3.1": {
       "sha512": "nM90eGuLT0NMwdWiZaGp5+0vxc0Tr+2vILeQlth2+0csmUEmAgtQcr99vRstJx7NV+jbjrtd/q52P+JcUDMG4Q==",
       "type": "package",
@@ -856,17 +878,18 @@
         "lib/netstandard2.0/FlatSharp.Runtime.dll"
       ]
     },
-    "LeagueToolkit/2.1.0": {
-      "sha512": "7dAm4O82OFctue8mVU3II3SvIPjn6a1i5ON1uPvFEl05PmSV47oOLxzjh2B/HwQyPa6MgSyDO6bk8GTNI981Zg==",
+    "JeremyAnsel.Media.WavefrontObj/2.0.19": {
+      "sha512": "GIpxn2ydTda6kQMpOhQNLaebAQMMWNCctcgaQLwE/wjcmpyIf7rISqQwoCUOD63E1pUIVZIWV/Uo7/5b4XuuJw==",
       "type": "package",
-      "path": "leaguetoolkit/2.1.0",
+      "path": "jeremyansel.media.wavefrontobj/2.0.19",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fantome.png",
-        "leaguetoolkit.2.1.0.nupkg.sha512",
-        "leaguetoolkit.nuspec",
-        "lib/netstandard2.1/LeagueToolkit.dll"
+        "LICENSE.txt",
+        "jeremyansel.media.wavefrontobj.2.0.19.nupkg.sha512",
+        "jeremyansel.media.wavefrontobj.nuspec",
+        "lib/net40/JeremyAnsel.Media.WavefrontObj.dll",
+        "lib/netstandard2.0/JeremyAnsel.Media.WavefrontObj.dll"
       ]
     },
     "Magick.NET-Q16-AnyCPU/7.21.1": {
@@ -2848,7 +2871,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "LeagueToolkit >= 2.1.0"
+      "Fantome.Libraries.League >= 1.6.4",
+      "JeremyAnsel.Media.WavefrontObj >= 2.0.19"
     ]
   },
   "packageFolders": {
@@ -2897,9 +2921,13 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "LeagueToolkit": {
+          "Fantome.Libraries.League": {
             "target": "Package",
-            "version": "[2.1.0, )"
+            "version": "[1.6.4, )"
+          },
+          "JeremyAnsel.Media.WavefrontObj": {
+            "target": "Package",
+            "version": "[2.0.19, )"
           }
         },
         "imports": [

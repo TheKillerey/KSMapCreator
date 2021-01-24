@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LeagueToolkit" Version="2.1.0" />
+    <PackageReference Include="Fantome.Libraries.League" Version="1.6.4" />
+    <PackageReference Include="JeremyAnsel.Media.WavefrontObj" Version="2.0.19" />
   </ItemGroup>
 
 </Project>

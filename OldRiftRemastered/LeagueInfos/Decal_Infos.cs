@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace OldRiftRemastered
 {
-    class Decals
+    class Decal_Infos
     {
+
+        //                 object3.FlipNormals = true;
+
+
         /*
          Decal Settings:
 
