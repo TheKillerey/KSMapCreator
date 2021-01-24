@@ -19,14 +19,14 @@ using static System.Net.Mime.MediaTypeNames;
 using Microsoft.VisualBasic.CompilerServices;
 using Fantome.Libraries.League.Converters;
 using Newtonsoft.Json.Linq;
-using JeremyAnsel.Media.WavefrontObj;
 using System.Runtime.InteropServices;
 using System.Text;
 using Microsoft.VisualBasic.FileIO;
 using System.ComponentModel.DataAnnotations;
 using System.Threading;
+using Fantome.Libraries.League.IO.MapParticles;
 
-namespace OldRiftRemastered
+namespace KSMapCreator
 {
     class Program
     {
@@ -35,10 +35,10 @@ namespace OldRiftRemastered
         static void Main(string[] args)
         {
           
-            string BildgeMgeoPath = @"K:\Riot Games\League of Legends\Game\DATA\FINAL\Maps\Shipping\Map11\data\maps\mapgeometry\sr\base_srx.mapgeo";
-            MapGeometry BildgeWaterMgeo = new MapGeometry(BildgeMgeoPath);
-            BildgeWaterMgeo.Models.Clear();
-            BildgeWaterRift(BildgeWaterMgeo);
+            string MapMgeoPath = "MapFile/base_srx.mapgeo";
+            MapGeometry MapMgeo = new MapGeometry(MapMgeoPath);
+            MapMgeo.Models.Clear();
+            BildgeWaterRift(MapMgeo);
             
 
         }
@@ -70,7 +70,7 @@ namespace OldRiftRemastered
             List<MapGeometryModel> mgeoModels = new List<MapGeometryModel>();
             if (vertices.Count > 30000 & indices.Count > 27000)
             {
-                MapGeometryModel newMgeoMesh = new MapGeometryModel();
+                /*MapGeometryModel newMgeoMesh = new MapGeometryModel();
                 foreach (var vert in vertices)
                 {
                     MapGeometryVertex newMgeoVertex = new MapGeometryVertex();
@@ -80,7 +80,7 @@ namespace OldRiftRemastered
                 }
                 foreach (var index in indices)
                 newMgeoMesh.Indices.Add(index);
-                mgeoModels.Add(newMgeoMesh); //should work now
+                mgeoModels.Add(newMgeoMesh);*/ //should work now
                 Console.WriteLine($"{room.Name} is too big for Leauge and need to be splitted into smaller parts.");
                 Console.WriteLine($"Vertices:{vertices.Count}");
                 Console.WriteLine($"Indices:{indices.Count}");
@@ -95,10 +95,8 @@ namespace OldRiftRemastered
                 //Set Max values for vertices and indices
                 int vtmax = 30000;
                 int idmax = 27000;
-                
+                //Log Formatting
                 sb.AppendLine($"room{i}.obj -> {room.Name} | Vertices:{vertices.Count} > {vtmax}, Indices:{indices.Count} > {idmax}");
-                
-                
                 
                 //Addeds DateTime to file name
                 int Day = DateTime.Now.Day;
@@ -116,7 +114,7 @@ namespace OldRiftRemastered
             else
             {
 
-                room.Indices.AddRange(room.Indices);
+                /*room.Indices.AddRange(room.Indices);
                 UInt32 mgeoCount = 1;
                 while (room.Indices.Count > 0)
                 {
@@ -182,70 +180,24 @@ namespace OldRiftRemastered
                     mgeo.AddModel(newMgeoMesh);
                     if (!tooManyIndices)
                         mgeoCount += 1;
-                }
+                }*/
                 Console.WriteLine($"OBJ to MAPGEO Convert: room{i}.obj -> {room.Name}");
                 Console.WriteLine($"Vertices:{vertices.Count}");
                 Console.WriteLine($"Indices:{indices.Count}");
                 Console.WriteLine("_________________________________________________________________________________");
-                Console.WriteLine(mgeoCount.ToString(""));
-                mgeo.AddModel(room);
+              //Console.WriteLine(mgeoCount.ToString(""));
+                
             }
-            //if (vertices.Count > 30000 & indices.Count > 27000)
-            //{ 
-            //    Console.WriteLine($"{room.Name} is too big for Leauge and need to be splitted into smaller parts.");
-            //    Console.WriteLine($"Vertices:{vertices.Count}");
-            //    Console.WriteLine($"Indices:{indices.Count}");
-            //    mgeo.Models.Remove(room);
-            //    Console.WriteLine($"Ignored: {room.Name}");
-            //    Console.WriteLine("_________________________________________________________________________________");
-
-                
-
-            //    //Writes Temporary a log file into a specific folder
-            //    StringBuilder sb = new StringBuilder();
-            //    //Set Max values for vertices and indices
-            //    int vtmax = 30000;
-            //    int idmax = 27000;
-
-            //    sb.AppendLine($"room{i}.obj -> {room.Name} | Vertices:{vertices.Count} > {vtmax}, Indices:{indices.Count} > {idmax}");
-
-                
-
-            //    //Addeds DateTime to file name
-            //    int Day = DateTime.Now.Day;
-            //    int Month = DateTime.Now.Month;
-            //    int Year = DateTime.Now.Year;
-            //    int Hour = DateTime.Now.Hour;
-            //    int Minute = DateTime.Now.Minute;
-            //    int Second = DateTime.Now.Second;
-            //    string Time = $"{Day}_{Month}_{Year}_{Hour}_{Minute}";
-
-            //    File.AppendAllText(@"K:\Riot Games\LeagueSkins\BildgewaterRift\logs\"+$"{Time}_map_log.txt", sb.ToString());
-                
-            //    sb.Clear();
-            //}
-            //else
-            //{
-            //   Console.WriteLine($"OBJ to MAPGEO Convert: room{i}.obj -> {room.Name}");
-            //   Console.WriteLine($"Vertices:{vertices.Count}");
-            //   Console.WriteLine($"Indices:{indices.Count}");
-            //   Console.WriteLine("_________________________________________________________________________________");
-            //}
-            
-            
-            //decal.FlipNormals = false;
-            //mgeo.BucketGrid.BucketSizeX = -1;
-            //mgeo.Models.Reverse();
+            mgeo.AddModel(room);
         }
-        private static void NewMethod(List<uint> keptIndices, List<uint> sortedIndices, int p, uint verticesToRemove)
+        /*private static void NewMethod(List<uint> keptIndices, List<uint> sortedIndices, int p, uint verticesToRemove)
         {
             for (var j = 0; j <= keptIndices.Count - 1; j++)
             {
                 if (keptIndices[j] >= sortedIndices[p])
                     keptIndices[j] = keptIndices[j] - verticesToRemove;
             }
-        }
-
+        }*/
 
 
     }

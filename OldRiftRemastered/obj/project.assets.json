@@ -44,15 +44,6 @@
           "lib/netcoreapp2.1/FlatSharp.Runtime.dll": {}
         }
       },
-      "JeremyAnsel.Media.WavefrontObj/2.0.19": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/JeremyAnsel.Media.WavefrontObj.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/JeremyAnsel.Media.WavefrontObj.dll": {}
-        }
-      },
       "Magick.NET-Q16-AnyCPU/7.21.1": {
         "type": "package",
         "dependencies": {
@@ -876,20 +867,6 @@
         "flatsharp.runtime.nuspec",
         "lib/netcoreapp2.1/FlatSharp.Runtime.dll",
         "lib/netstandard2.0/FlatSharp.Runtime.dll"
-      ]
-    },
-    "JeremyAnsel.Media.WavefrontObj/2.0.19": {
-      "sha512": "GIpxn2ydTda6kQMpOhQNLaebAQMMWNCctcgaQLwE/wjcmpyIf7rISqQwoCUOD63E1pUIVZIWV/Uo7/5b4XuuJw==",
-      "type": "package",
-      "path": "jeremyansel.media.wavefrontobj/2.0.19",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "jeremyansel.media.wavefrontobj.2.0.19.nupkg.sha512",
-        "jeremyansel.media.wavefrontobj.nuspec",
-        "lib/net40/JeremyAnsel.Media.WavefrontObj.dll",
-        "lib/netstandard2.0/JeremyAnsel.Media.WavefrontObj.dll"
       ]
     },
     "Magick.NET-Q16-AnyCPU/7.21.1": {
@@ -2871,8 +2848,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Fantome.Libraries.League >= 1.6.4",
-      "JeremyAnsel.Media.WavefrontObj >= 2.0.19"
+      "Fantome.Libraries.League >= 1.6.4"
     ]
   },
   "packageFolders": {
@@ -2883,9 +2859,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\OldRiftRemastered.csproj",
-      "projectName": "OldRiftRemastered",
-      "projectPath": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\OldRiftRemastered.csproj",
+      "projectUniqueName": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\KSMapCreator.csproj",
+      "projectName": "KSMapCreator",
+      "projectPath": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\KSMapCreator.csproj",
       "packagesPath": "C:\\Users\\theki\\.nuget\\packages\\",
       "outputPath": "K:\\VisualStudioProjects\\OldRiftRemastered\\OldRiftRemastered\\obj\\",
       "projectStyle": "PackageReference",
@@ -2924,10 +2900,6 @@
           "Fantome.Libraries.League": {
             "target": "Package",
             "version": "[1.6.4, )"
-          },
-          "JeremyAnsel.Media.WavefrontObj": {
-            "target": "Package",
-            "version": "[2.0.19, )"
           }
         },
         "imports": [
