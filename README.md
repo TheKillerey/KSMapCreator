@@ -30,5 +30,6 @@
 	
  -GLTF support (Depends on League Toolbox) to add Lightmaps into maps
 	
+ ## LICENCE:
  
  Using Fantome Library by Crauzer & Chewy: https://github.com/LoL-Fantome/Fantome.Libraries.League
