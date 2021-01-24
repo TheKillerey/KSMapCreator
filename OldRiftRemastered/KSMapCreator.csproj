@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <ApplicationIcon>killerskinslogov2_new.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
