@@ -12,13 +12,13 @@
 	
  -Auto Material creation based on model name
  
+ -Convert .mtl to league material format
+ 
  ## Future features:
  
  -UI Support
 	
  -Select output folder
-	
- -Convert .mtl to .material.bin (Adding textures to the bin file)
 	
  -Auto split meshes if they are too big for league (Currently WIP)
 	
