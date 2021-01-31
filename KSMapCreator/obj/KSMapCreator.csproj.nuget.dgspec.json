@@ -45,6 +45,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "CjClutter.ObjLoader": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Fantome.Libraries.League": {
               "target": "Package",
               "version": "[1.6.4, )"

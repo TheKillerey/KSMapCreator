@@ -25,6 +25,13 @@ using Microsoft.VisualBasic.FileIO;
 using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using Fantome.Libraries.League.IO.MapParticles;
+using System.Runtime.Intrinsics.X86;
+using Fantome.Libraries.League.IO.MaterialLibrary;
+using ObjLoader;
+using Fantome.Libraries.League.Helpers;
+using ObjLoader.Loader.Data;
+using ObjLoader.Loader.Data.VertexData;
+using ObjLoader.Loader.Common;
 
 namespace KSMapCreator
 {
@@ -34,6 +41,11 @@ namespace KSMapCreator
 
         static void Main(string[] args)
         {
+            //Deletes existing material file.
+            if(File.Exists(@"material_output\material.py"))
+            {
+                File.Delete(@"material_output\material.py");
+            }
           
             string MapMgeoPath = "MapFile/base_srx.mapgeo";
             MapGeometry MapMgeo = new MapGeometry(MapMgeoPath);
@@ -45,15 +57,19 @@ namespace KSMapCreator
 
         static void BildgeWaterRift(MapGeometry mgeo)
         {
-            var fileCount = (from file in Directory.EnumerateFiles(@"K:\Riot Games\LeagueSkins\BildgewaterRift\3dmodelsnew", "*.obj", System.IO.SearchOption.AllDirectories) select file).Count();
+            
+            //Model Bulk Loading
+            var fileCount = (from file in Directory.EnumerateFiles(@"K:\Riot Games\LeagueSkins\BildgewaterRift\3dmodelsnewnew", "*.obj", System.IO.SearchOption.AllDirectories) select file).Count();
             int OBJsToCreate = fileCount + 1;
             OBJFile[] OBJs = new OBJFile[OBJsToCreate];
+            
             
             
             for (int i = 1; i < OBJsToCreate; i++)
             {
                 
-                OBJs[i] = new OBJFile($@"K:\Riot Games\LeagueSkins\BildgewaterRift\3dmodelsnew\room{i}.obj");
+                OBJs[i] = new OBJFile($@"K:\Riot Games\LeagueSkins\BildgewaterRift\3dmodelsnewnew\room{i}.obj");
+                
                 int j = i;
                 AddModel(OBJs[i], $"MapGeo_Instance_{i}", $"Maps/KitPieces/Summoners_Rift/Materials/room{i}", mgeo, i, j);
 
@@ -61,13 +77,133 @@ namespace KSMapCreator
             }
             mgeo.Write(@"K:\Riot Games\LeagueSkins\BildgewaterRift\Map11\data\maps\mapgeometry\sr\base_srx.mapgeo", 11);
         }
-        static void AddModel(OBJFile obj, string name, string path, MapGeometry mgeo, int i, int j)
+
+
+
+        static void AddModel(OBJFile obj,  string name, string path, MapGeometry mgeo, int i, int j)
         {
             (List<ushort> indices, List<MapGeometryVertex> vertices) = obj.GetMGEOData();
             MapGeometrySubmesh submesh = new MapGeometrySubmesh(path, 0, (uint)indices.Count, 0, (uint)vertices.Count);
             MapGeometryModel room = new MapGeometryModel(name, vertices, indices, new List<MapGeometrySubmesh>() { submesh }, MapGeometryLayer.Layer1);
             //Fix for big models that league can't handle.
             List<MapGeometryModel> mgeoModels = new List<MapGeometryModel>();
+
+
+            //Porting material file to league format
+           
+            
+                
+            StringBuilder mtl = new StringBuilder();
+            string readfile = File.ReadLines($@"K:\Riot Games\LeagueSkins\BildgewaterRift\3dmodelsnewnew\room{i}.mtl").Skip(12).Take(1).First();
+            string filenew = readfile.Replace("map_Kd K:\\\\Riot Games\\\\LeagueSkins\\\\BildgewaterRift\\\\3dmodelsnew\\\\", "");
+            string text = filenew.Replace(".dds", "");
+            string texturename = text;
+
+            // " is replaced by *
+            // { is replaced by (
+            // } is replaced by )
+
+            //Will be replaced later
+            
+              if (readfile.IsNullOrEmpty())
+            {
+                mtl.AppendLine($"*Maps/KitPieces/Summoners_Rift/Materials/room{i}* = StaticMaterialDef (");
+                mtl.AppendLine($"        name: string = *Maps/KitPieces/Summoners_Rift/Materials/room{i}*");
+                mtl.AppendLine("        type: u32 = 0");
+                mtl.AppendLine("        defaultTechnique: string = *normal*");
+                mtl.AppendLine("        samplerValues: list[embed] = (");
+                mtl.AppendLine("            StaticMaterialShaderSamplerDef (");
+                mtl.AppendLine("                samplerName: string = *DiffuseTexture*");
+                mtl.AppendLine($"                textureName: string = *ASSETS/Shared/Materials/white.dds*");
+                mtl.AppendLine("                addressW: u32 = 1");
+                mtl.AppendLine("            )");
+                mtl.AppendLine("        )");
+                mtl.AppendLine("        paramValues: list[embed] = (");
+                mtl.AppendLine("            StaticMaterialShaderParamDef (");
+                mtl.AppendLine("                name: string = *AlphaTestValue*");
+                mtl.AppendLine("                value: vec4 = ( 0.300000012, 0, 0, 0 )");
+                mtl.AppendLine("            )");
+                mtl.AppendLine("        )");
+                mtl.AppendLine("        shaderMacros: map[string,string] = (");
+                mtl.AppendLine("            *NO_BAKED_LIGHTING* = *1*");
+                mtl.AppendLine("            *DISABLE_DEPTH_FOG* = *1*");
+                mtl.AppendLine("            *PREMULTIPLIED_ALPHA* = *1*");
+                mtl.AppendLine("        )");
+                mtl.AppendLine("        techniques: list[embed] = (");
+                mtl.AppendLine("            StaticMaterialTechniqueDef (");
+                mtl.AppendLine("                name: string = *normal*");
+                mtl.AppendLine("                passes: list[embed] = (");
+                mtl.AppendLine("                    StaticMaterialPassDef (");
+                mtl.AppendLine("                        shader: link = *Shaders/Environment/DefaultEnv_Flat_AlphaTest*");
+                mtl.AppendLine("                        blendEnable: bool = true");
+                mtl.AppendLine("                        dstColorBlendFactor: u32 = 7");
+                mtl.AppendLine("                        dstAlphaBlendFactor: u32 = 7");
+                mtl.AppendLine("                    )");
+                mtl.AppendLine("                )");
+                mtl.AppendLine("            )");
+                mtl.AppendLine("        )");
+                mtl.AppendLine("    )");
+
+                
+                
+            
+                Directory.CreateDirectory("material_output");
+                File.AppendAllText(@"material_output\"+"material.py", mtl.ToString());
+                //Console.Write(mtl.ToString());
+            }
+
+             else
+            {
+                mtl.AppendLine($"*Maps/KitPieces/Summoners_Rift/Materials/room{i}* = StaticMaterialDef (");
+                mtl.AppendLine($"        name: string = *Maps/KitPieces/Summoners_Rift/Materials/room{i}*");
+                mtl.AppendLine("        type: u32 = 0");
+                mtl.AppendLine("        defaultTechnique: string = *normal*");
+                mtl.AppendLine("        samplerValues: list[embed] = (");
+                mtl.AppendLine("            StaticMaterialShaderSamplerDef (");
+                mtl.AppendLine("                samplerName: string = *DiffuseTexture*");
+                mtl.AppendLine($"                textureName: string = *ASSETS/Maps/KitPieces/SRX/bildgewater/{texturename}.dds*");
+                mtl.AppendLine("                addressW: u32 = 1");
+                mtl.AppendLine("            )");
+                mtl.AppendLine("        )");
+                mtl.AppendLine("        paramValues: list[embed] = (");
+                mtl.AppendLine("            StaticMaterialShaderParamDef (");
+                mtl.AppendLine("                name: string = *AlphaTestValue*");
+                mtl.AppendLine("                value: vec4 = ( 0.300000012, 0, 0, 0 )");
+                mtl.AppendLine("            )");
+                mtl.AppendLine("        )");
+                mtl.AppendLine("        shaderMacros: map[string,string] = (");
+                mtl.AppendLine("            *NO_BAKED_LIGHTING* = *1*");
+                mtl.AppendLine("            *DISABLE_DEPTH_FOG* = *1*");
+                mtl.AppendLine("            *PREMULTIPLIED_ALPHA* = *1*");
+                mtl.AppendLine("        )");
+                mtl.AppendLine("        techniques: list[embed] = (");
+                mtl.AppendLine("            StaticMaterialTechniqueDef (");
+                mtl.AppendLine("                name: string = *normal*");
+                mtl.AppendLine("                passes: list[embed] = (");
+                mtl.AppendLine("                    StaticMaterialPassDef (");
+                mtl.AppendLine("                        shader: link = *Shaders/Environment/DefaultEnv_Flat_AlphaTest*");
+                mtl.AppendLine("                        blendEnable: bool = true");
+                mtl.AppendLine("                        dstColorBlendFactor: u32 = 7");
+                mtl.AppendLine("                        dstAlphaBlendFactor: u32 = 7");
+                mtl.AppendLine("                    )");
+                mtl.AppendLine("                )");
+                mtl.AppendLine("            )");
+                mtl.AppendLine("        )");
+                mtl.AppendLine("    )");
+
+                
+                
+                //Console.Write(mtl.ToString());
+                Directory.CreateDirectory("material_output");
+                File.AppendAllText(@"material_output\"+"material.py", mtl.ToString());
+            }
+
+            
+
+                
+               
+
+
             if (vertices.Count > 30000 & indices.Count > 27000)
             {
                 /*MapGeometryModel newMgeoMesh = new MapGeometryModel();
@@ -107,9 +243,11 @@ namespace KSMapCreator
                 int Second = DateTime.Now.Second;
                 string Time = $"{Day}_{Month}_{Year}_{Hour}_{Minute}";
                 
-                File.AppendAllText(@"K:\Riot Games\LeagueSkins\BildgewaterRift\logs\"+$"{Time}_map_log.txt", sb.ToString());
+                Directory.CreateDirectory("logs");
+                File.AppendAllText(@"logs\"+$"{Time}_map_log.txt", sb.ToString());
                 
                 sb.Clear();
+
             }
             else
             {
@@ -189,17 +327,21 @@ namespace KSMapCreator
                 
             }
             mgeo.AddModel(room);
-        }
-        /*private static void NewMethod(List<uint> keptIndices, List<uint> sortedIndices, int p, uint verticesToRemove)
-        {
-            for (var j = 0; j <= keptIndices.Count - 1; j++)
+
+
+            //mtl to league material format.
+
+           
+            
+            
+                }
+            /*private static void NewMethod(List<uint> keptIndices, List<uint> sortedIndices, int p, uint verticesToRemove)
             {
-                if (keptIndices[j] >= sortedIndices[p])
-                    keptIndices[j] = keptIndices[j] - verticesToRemove;
-            }
-        }*/
-
-
-    }
-
-}
+                for (var j = 0; j <= keptIndices.Count - 1; j++)
+                {
+                    if (keptIndices[j] >= sortedIndices[p])
+                        keptIndices[j] = keptIndices[j] - verticesToRemove;
+                }
+            }*/
+        }
+    } 
