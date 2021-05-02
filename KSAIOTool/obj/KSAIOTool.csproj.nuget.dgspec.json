@@ -1,0 +1,98 @@
+{
+  "format": 1,
+  "restore": {
+    "K:\\VisualStudioProjects\\KSMapCreator\\KSAIOTool\\KSAIOTool.csproj": {}
+  },
+  "projects": {
+    "K:\\VisualStudioProjects\\KSMapCreator\\KSAIOTool\\KSAIOTool.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "K:\\VisualStudioProjects\\KSMapCreator\\KSAIOTool\\KSAIOTool.csproj",
+        "projectName": "KSAIOTool",
+        "projectPath": "K:\\VisualStudioProjects\\KSMapCreator\\KSAIOTool\\KSAIOTool.csproj",
+        "packagesPath": "C:\\Users\\theki\\.nuget\\packages\\",
+        "outputPath": "K:\\VisualStudioProjects\\KSMapCreator\\KSAIOTool\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\theki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "Aspose.3D": {
+              "target": "Package",
+              "version": "[21.2.1, )"
+            },
+            "AutoUpdateViaGitHubRelease": {
+              "target": "Package",
+              "version": "[0.1.30, )"
+            },
+            "CjClutter.ObjLoader": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "DarkUI": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Fantome.Libraries.League": {
+              "target": "Package",
+              "version": "[1.6.4, )"
+            },
+            "LeagueToolkit": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\5.0.300-preview.21180.15\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

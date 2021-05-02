@@ -1,0 +1,4 @@
+room561.obj -> MapGeo_Instance_561 | Vertices:34198 > 30000, Indices:76401 > 27000
+room562.obj -> MapGeo_Instance_562 | Vertices:34939 > 30000, Indices:77403 > 27000
+room563.obj -> MapGeo_Instance_563 | Vertices:33942 > 30000, Indices:75327 > 27000
+room564.obj -> MapGeo_Instance_564 | Vertices:33160 > 30000, Indices:72837 > 27000

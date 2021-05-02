@@ -1,0 +1,77 @@
+{
+  "runtimeTarget": {
+    "name": "net5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    "net5.0": {
+      "DevTests/1.0.0": {
+        "dependencies": {
+          "TGC.SceneLoader": "1.0.0"
+        },
+        "runtime": {
+          "DevTests.dll": {}
+        }
+      },
+      "BulletSharp/0.10.0": {
+        "runtime": {
+          "lib/net40-client/BulletSharp.dll": {
+            "assemblyVersion": "0.10.0.0",
+            "fileVersion": "0.10.0.0"
+          }
+        }
+      },
+      "TGC.Core/2.3.3": {
+        "dependencies": {
+          "BulletSharp": "0.10.0"
+        },
+        "runtime": {
+          "lib/net471/TGC.Core.dll": {
+            "assemblyVersion": "2.3.3.0",
+            "fileVersion": "2.3.3.0"
+          }
+        }
+      },
+      "TGC.SceneLoader/1.0.0": {
+        "dependencies": {
+          "TGC.Core": "2.3.3"
+        },
+        "runtime": {
+          "lib/net471/TGC.SceneLoader.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DevTests/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BulletSharp/0.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U7uHM4Qro1dcUA0OAkdWUXYB55pZ0vCwAVha1K3TlEA6WnhtYbp1yoBAIUNUwHBPm+zGtDe/dn3NWQCnKdUL/g==",
+      "path": "bulletsharp/0.10.0",
+      "hashPath": "bulletsharp.0.10.0.nupkg.sha512"
+    },
+    "TGC.Core/2.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2xHYsW56K5sw4x7wh9fM1lOdXxMONZJ2BX1mGgbOyoMwJjS1kT7PLv6Vh1L098YfzIrEY4pPLczFqbwGZM43Ww==",
+      "path": "tgc.core/2.3.3",
+      "hashPath": "tgc.core.2.3.3.nupkg.sha512"
+    },
+    "TGC.SceneLoader/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aX3v1u3wDUoMI2a7fBMONSX8iEW1YXsrBPJsYxWKofALJcpPt44m5UB7wf2sPsqGaIx9G3328VcIgfhGViKKQg==",
+      "path": "tgc.sceneloader/1.0.0",
+      "hashPath": "tgc.sceneloader.1.0.0.nupkg.sha512"
+    }
+  }
+}

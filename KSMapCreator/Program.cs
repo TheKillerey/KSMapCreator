@@ -94,9 +94,16 @@ namespace KSMapCreator
             
                 
             StringBuilder mtl = new StringBuilder();
+            string number = $"{i}";
             string readfile = File.ReadLines($@"K:\Riot Games\LeagueSkins\BildgewaterRift\3dmodelsnewnew\room{i}.mtl").Skip(12).Take(1).First();
-            string filenew = readfile.Replace("map_Kd K:\\\\Riot Games\\\\LeagueSkins\\\\BildgewaterRift\\\\3dmodelsnew\\\\", "");
-            string text = filenew.Replace(".dds", "");
+            string replace = readfile.Replace("\\\\", " \\\\ ");
+            
+            var gettexturename = string.Join(" ", replace.Split().Reverse().Take(1).Reverse());
+            
+
+
+            
+            string text = gettexturename.Replace(".dds", "");
             string texturename = text;
 
             // " is replaced by *
